@@ -683,6 +683,27 @@ form {
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
 }
+.form-input:focus + .svg-modal {
+    outline: none;
+    outline: 1px solid var(--primary-brand);
+    fill: var(--primary-brand)
+    /* border-color: #4D5AE5; */
+}
+.form-input-wrapper {
+    display: block;
+    position: relative;
+}
+.svg-modal {
+    display: block;
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 24px;
+    width: 18px;
+    fill: var(--dark);
+    
+}
 .textarea-form {
     display: block;
     margin-bottom: 16px;
@@ -692,6 +713,10 @@ form {
     resize: none;
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px; 
+}
+.textarea-form:focus {
+    outline: none;
+    border: 1px solid var(--primary-brand);
 }
 .text-action {
     margin-bottom: 14px;
@@ -719,7 +744,9 @@ form {
     color: var(--primary-brand);
 }
 .form-checkbox-pos {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
     margin-bottom: 24px;
 }
 .btn-submit {
@@ -756,6 +783,7 @@ form {
     padding: 8px 16px;
     height: 40px;
     width: 264px;
+    color: var(--pure-white);
     background-color: var(--dark);
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 4px;
