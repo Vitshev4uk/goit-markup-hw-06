@@ -1,6 +1,7 @@
 /* Утиліти */
 :root {
 --primary-brand : #4D5AE5;
+--accept-col : #404BBF;
 --text-col : #434455;
 --dark : #2E2F42;
 --subtle-text : #8E8F99;
@@ -217,9 +218,9 @@ h1,h2,h3,p,ul {
 .btn:hover,
 .btn:focus {
     color: var(--pure-white);
-    background-color: #404BBF;
+    background-color: var(--accept-col);
     border: 1px solid;
-    border-color: #404BBF;
+    border-color: var(--accept-col);
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
     0px 2px 1px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
@@ -645,9 +646,10 @@ color: var(--pure-white);
     cursor: pointer;
 }
 .modal-btn:active {
-    background-color: var(--accent);
-    border-color: var(--subtle-text);
+    background-color: var(--accept-col);
+    border-color: var(--accept-col);
     box-shadow: none;
+    fill: var(--pure-white);
 }
 .modalsvg {
     background-size: contain;
@@ -669,7 +671,7 @@ form {
     letter-spacing: 0.04em;
     color: var(--subtle-text);
 }
-.form-label:nth-last-child(4) {
+.form-label:nth-child(5) {
     margin-bottom: 0px;
 }
 .input-desc {
@@ -685,14 +687,13 @@ form {
     height: 40px;
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
+    transition: outline 250ms var(--tras-t-fun);
 }
 .form-input-wrapper {
     display: block;
     position: relative;
 }
 .form-input:focus + .svg-modal {
-    /* outline: none; */
-    /* outline: 1px solid var(--primary-brand); */
     fill: var(--primary-brand)
 }
 .form-input:focus {
@@ -708,6 +709,7 @@ form {
     height: 24px;
     width: 18px;
     fill: var(--dark);
+    transition: fill 250ms var(--tras-t-fun);
     
 }
 .textarea-form {
@@ -759,47 +761,40 @@ form {
     letter-spacing: 0.04em;
     color: var(--primary-brand);
 }
-.form-checkbox-desc::before {
-    content: '';
-    display: block;
+.form-checkbox-label {
+    display: flex;
+}
+.form-fake-checkbox {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     width: 16px;
     height: 16px;
-    border: 1.25px solid var(--dark);
+    margin-left: 0;
+    margin-right: 0;
+    border: 2px solid var(--dark);
     border-radius: 2px;
-    cursor: pointer;
-    margin-right: 8px;
+    transition: background-color 250ms var(--tras-t-fun);
 }
-.form-checkbox:checked + .form-checkbox-desc::before {
-    background-color: #404BBF;
-    background-image: url(../images/checkbox.svg);
-    background-size: 10px 8px;
-    background-repeat: no-repeat;
-    background-position: center;
-    border: 1.25px solid var(--primary-brand);
-}
-.form-checkbox:focus + .form-checkbox-desc::before {
-    border: 1.25px solid var(--primary-brand);
-}
-/* .form-fake-checkbox {
-    width: 16px;
-    height: 16px;
-    border: 1.25px solid var(--dark);
-    border-radius: 2px;
-    cursor: pointer;
-    margin-right: 8px;
-} */
 .svg-fake-checkbox {
-    opacity: 0;
+    display: block;
+    width: 10px;
+    height: 8px;
+    align-items: center;
+    justify-content: center;
+    opacity: 0; 
 }
-/* .form-checkbox:checked + .form-fake-checkbox {
-    background-color: #404BBF;
-    background-image: url(../images/checkbox.svg);
-    background-size: 10px 8px;
-    background-repeat: no-repeat;
-    background-position: center;
-    border: 1.25px solid var(--primary-brand);
+.form-checkbox:checked + .form-fake-checkbox {
+    background-color: var(--accept-col);
+    border: 1px solid var(--accept-col);
+}
+.form-checkbox:checked + .form-fake-checkbox .svg-fake-checkbox {
     opacity: 1;
-} */
+    fill: var(--pure-white);
+}
+.form-checkbox:focus + .form-fake-checkbox {
+    border: 1.25px solid var(--primary-brand);
+}
 .btn-submit {
     margin: auto;
     height: 56px;
@@ -820,9 +815,9 @@ form {
 .btn-submit:hover,
 .btn-submit:focus {
     color: var(--pure-white);
-    background-color: #404BBF;
+    background-color: var(--accept-col);
     border: 1px solid;
-    border-color: #404BBF;
+    border-color: var(--accept-col);
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
     0px 2px 1px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
@@ -882,9 +877,9 @@ form {
 .btn-subscribe:hover,
 .btn-subscribe:focus {
     color: var(--pure-white);
-    background-color: #404BBF;
+    background-color: var(--accept-col);
     border: 1px solid;
-    border-color: #404BBF;
+    border-color: var(--accept-col);
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
     0px 2px 1px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);

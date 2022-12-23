@@ -477,7 +477,7 @@
           <label class="form-label">
             <span class="input-desc">Name</span>
             <span class="form-input-wrapper">
-              <input class="form-input" type="text" name="user_name" required>
+              <input class="form-input" type="text" name="user_name" autofocus required>
               <svg class="svg-modal">
                 <use href="./images/symbol-defs.svg#icon-person"></use>
               </svg>
@@ -505,13 +505,15 @@
             <span class="input-desc">Comment</span>
             <textarea class="textarea-form" name="user_messge" placeholder="Text input"></textarea>
           </label>
-          <input id="user-policy" class="form-checkbox hidden" type="checkbox" name="user_policy" >
-          <label for="user-policy" class="form-checkbox-desc">I accept the terms and conditions of the&nbsp;<a class="privacy-policy-link" href="">Privacy Policy</a></label>
+        <label class="form-checkbox-label">
+          <input class="form-checkbox hidden" type="checkbox" name="policy" value="accept_policy">
           <span class="form-fake-checkbox">
             <svg class="svg-fake-checkbox">
               <use href="./images/symbol-defs.svg#icon-checkbox"></use>
             </svg>
           </span>
+          <span class="form-checkbox-desc">I accept the terms and conditions of the&nbsp;<a class="privacy-policy-link" href="">Privacy Policy</a></span>
+        </label>
           <button class="btn-submit" type="submit">Send</button>
         </form>
       </div>
