@@ -212,7 +212,7 @@ h1,h2,h3,p,ul {
     cursor: pointer;
     text-align: center;
 
-    transition: box-shadow, background-color 250ms var(--tras-t-fun);
+    transition: box-shadow 250ms var(--tras-t-fun), background-color 250ms var(--tras-t-fun);
 }
 .btn:hover,
 .btn:focus {
@@ -683,15 +683,15 @@ form {
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
 }
+.form-input-wrapper {
+    display: block;
+    position: relative;
+}
 .form-input:focus + .svg-modal {
     outline: none;
     outline: 1px solid var(--primary-brand);
     fill: var(--primary-brand)
     /* border-color: #4D5AE5; */
-}
-.form-input-wrapper {
-    display: block;
-    position: relative;
 }
 .svg-modal {
     display: block;
@@ -717,6 +717,13 @@ form {
 .textarea-form:focus {
     outline: none;
     border: 1px solid var(--primary-brand);
+}
+.textarea-form::placeholder {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.33;
+    letter-spacing: 0.04em;
+    color: rgba(117, 117, 117, 0.5);
 }
 .text-action {
     margin-bottom: 14px;
@@ -764,6 +771,17 @@ form {
     letter-spacing: 0.04em;
     color: var(--pure-white);
     cursor: pointer;
+    transition: box-shadow 250ms var(--tras-t-fun), background-color 250ms var(--tras-t-fun);
+}
+.btn-submit:hover,
+.btn-submit:focus {
+    color: var(--pure-white);
+    background-color: #404BBF;
+    border: 1px solid;
+    border-color: #404BBF;
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
+    0px 2px 1px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 /* FORM SUBSCRIBE */
 .container-subscribe {
@@ -806,4 +824,20 @@ form {
     letter-spacing: 0.04em;
     color: var(--pure-white);
     cursor: pointer;
+    transition: box-shadow 250ms var(--tras-t-fun), background-color 250ms var(--tras-t-fun);
+}
+.btn-subscribe:hover,
+.btn-subscribe:focus {
+    color: var(--pure-white);
+    background-color: #404BBF;
+    border: 1px solid;
+    border-color: #404BBF;
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
+    0px 2px 1px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+.svg-subscribe {
+    margin-left: 16px;
+    width: 24px;
+    height: 24px;
 }
