@@ -669,6 +669,9 @@ form {
     letter-spacing: 0.04em;
     color: var(--subtle-text);
 }
+.form-label:nth-last-child(4) {
+    margin-bottom: 0px;
+}
 .input-desc {
     display: block;
     margin-bottom: 4px;
@@ -688,10 +691,13 @@ form {
     position: relative;
 }
 .form-input:focus + .svg-modal {
+    /* outline: none; */
+    /* outline: 1px solid var(--primary-brand); */
+    fill: var(--primary-brand)
+}
+.form-input:focus {
     outline: none;
     outline: 1px solid var(--primary-brand);
-    fill: var(--primary-brand)
-    /* border-color: #4D5AE5; */
 }
 .svg-modal {
     display: block;
@@ -736,7 +742,10 @@ form {
     color: var(--dark);
 }
 .form-checkbox-desc {
+    display: flex;
+    align-items: center;
     margin-left: 8px;
+    margin-bottom: 24px;
     font-weight: 400;
     font-size: 12px;
     line-height: 1.33;
@@ -750,12 +759,47 @@ form {
     letter-spacing: 0.04em;
     color: var(--primary-brand);
 }
-.form-checkbox-pos {
-    display: flex;
-    align-items: center;
-    /* justify-content: space-between; */
-    margin-bottom: 24px;
+.form-checkbox-desc::before {
+    content: '';
+    display: block;
+    width: 16px;
+    height: 16px;
+    border: 1.25px solid var(--dark);
+    border-radius: 2px;
+    cursor: pointer;
+    margin-right: 8px;
 }
+.form-checkbox:checked + .form-checkbox-desc::before {
+    background-color: #404BBF;
+    background-image: url(../images/checkbox.svg);
+    background-size: 10px 8px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 1.25px solid var(--primary-brand);
+}
+.form-checkbox:focus + .form-checkbox-desc::before {
+    border: 1.25px solid var(--primary-brand);
+}
+/* .form-fake-checkbox {
+    width: 16px;
+    height: 16px;
+    border: 1.25px solid var(--dark);
+    border-radius: 2px;
+    cursor: pointer;
+    margin-right: 8px;
+} */
+.svg-fake-checkbox {
+    opacity: 0;
+}
+/* .form-checkbox:checked + .form-fake-checkbox {
+    background-color: #404BBF;
+    background-image: url(../images/checkbox.svg);
+    background-size: 10px 8px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 1.25px solid var(--primary-brand);
+    opacity: 1;
+} */
 .btn-submit {
     margin: auto;
     height: 56px;
@@ -786,6 +830,15 @@ form {
 /* FORM SUBSCRIBE */
 .container-subscribe {
     margin-left: 80px;
+}
+.subscribe-text {
+    margin-bottom: 16px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+
+    color: var(--pure-white);
 }
 .form-sub {
     padding: 0;
