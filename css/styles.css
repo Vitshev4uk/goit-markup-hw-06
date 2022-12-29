@@ -81,6 +81,9 @@ h1,h2,h3,p,ul {
 .menu-link:focus {
     color: var(--primary-brand);
 }
+.current {
+    color: var(--primary-brand)
+}
 .current::after {
     position: absolute;
     left: 0;
